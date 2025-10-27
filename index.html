@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOSMAN GAMING | Elite Gaming Community</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Luckiest+Guy&family=Bangers&family=Chewy&display=swap" rel="stylesheet">
+    
+    <!-- Favicon Links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Luckiest+Guy&family=Bangers&family=Chewy&family=Pacifico&family=Lobster&family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -41,6 +48,23 @@
             -webkit-transform: translateZ(0);
         }
 
+        /* Coca-Cola Style Font for Headings */
+        h1, h2, h3, h4, h5, h6,
+        .logo,
+        .section-title,
+        .community-title,
+        .game-title,
+        .feature-title,
+        .snake-title,
+        .snake-subtitle,
+        .gameplay-overlay,
+        .footer-logo {
+            font-family: 'Bubblegum Sans', cursive;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+        }
+
         /* Header */
         header {
             position: fixed;
@@ -62,8 +86,13 @@
             transition: background 0.3s ease;
         }
 
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
         .logo {
-            font-family: 'Orbitron', sans-serif;
             font-size: 2rem;
             font-weight: 900;
             letter-spacing: 4px;
@@ -73,6 +102,24 @@
 
         .logo span {
             color: var(--accent);
+        }
+
+        /* Profile Photo for Mobile */
+        .profile-photo {
+            display: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent);
+            overflow: hidden;
+            border: 3px solid white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         nav ul {
@@ -111,7 +158,6 @@
         }
 
         .hero h1 {
-            font-family: 'Luckiest Guy', cursive;
             font-size: clamp(2.5rem, 10vw, 5rem);
             font-weight: 400;
             margin-bottom: 20px;
@@ -123,7 +169,6 @@
         }
 
         .hero h2 {
-            font-family: 'Chewy', cursive;
             font-size: clamp(1rem, 4vw, 1.8rem);
             margin-bottom: 40px;
             color: var(--accent);
@@ -190,7 +235,6 @@
         }
 
         .snake-title {
-            font-family: 'Bangers', cursive;
             font-size: clamp(2.5rem, 8vw, 3.5rem);
             color: white;
             margin-bottom: 20px;
@@ -198,7 +242,6 @@
         }
 
         .snake-subtitle {
-            font-family: 'Chewy', cursive;
             font-size: clamp(1.2rem, 4vw, 1.5rem);
             color: var(--accent);
             margin-bottom: 40px;
@@ -212,7 +255,6 @@
         }
 
         .section-title {
-            font-family: 'Orbitron', sans-serif;
             font-size: clamp(2rem, 6vw, 3rem);
             text-align: center;
             margin-bottom: 70px;
@@ -236,7 +278,6 @@
         }
 
         .community-title {
-            font-family: 'Bangers', cursive;
             font-size: clamp(2.5rem, 8vw, 4rem);
             letter-spacing: 3px;
             color: white;
@@ -415,7 +456,6 @@
         }
 
         .footer-logo {
-            font-family: 'Orbitron', sans-serif;
             font-size: 1.8rem;
             font-weight: 900;
             color: white;
@@ -462,12 +502,24 @@
                 gap: 15px;
             }
 
+            .logo-container {
+                width: 100%;
+                justify-content: center;
+                position: relative;
+            }
+
+            .profile-photo {
+                display: block;
+                position: absolute;
+                left: 0;
+            }
+
             nav ul {
                 gap: 15px;
             }
 
             .hero {
-                padding-top: 150px;
+                padding-top: 180px;
             }
 
             .cta-buttons {
@@ -486,7 +538,13 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">HOSMAN<span>GAMING</span></div>
+        <div class="logo-container">
+            <div class="profile-photo">
+                <!-- Add your photo here -->
+                <img src="your-photo.jpg" alt="Profile Photo">
+            </div>
+            <div class="logo">HOSMAN<span>GAMING</span></div>
+        </div>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -582,7 +640,7 @@
                 <div class="gameplay-overlay">Call of Duty: Mobile</div>
             </div>
             <div class="gameplay-item">
-                <img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUybmo2aWRmNzBuODh4Z3RzdTI0dTdzcXNhbmJwNjh6d2Q4cWQ3c2hxbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1gUmpL04z5sl82ltdh/giphy.gif" alt="Fortnite Gameplay" class="gameplay-gif" loading="lazy">
+                <img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUybmo2aWRmNzBuODh4Z3RzdTI0dTdzcXNhbmJwNjh6d2Q4cWQ7c2hxbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1gUmpL04z5sl82ltdh/giphy.gif" alt="Fortnite Gameplay" class="gameplay-gif" loading="lazy">
                 <div class="gameplay-overlay">Fortnite Battle Royale</div>
             </div>
         </div>
