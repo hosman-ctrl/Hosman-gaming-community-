@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOSMAN GAMING | Elite Gaming Community</title>
+    <title>HOSMAN GAMING | Elite Gaming Community - PUBG, COD, Fortnite & More</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Join HOSMAN GAMING elite gaming community. Play PUBG, Call of Duty, Fortnite, Free Fire with active players, tournaments & strategy guides.">
+    <meta name="keywords" content="gaming community, PUBG Mobile, Call of Duty Mobile, Fortnite, Free Fire, mobile gaming, tournaments, gaming squad">
+    <meta name="author" content="HOSMAN GAMING">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="HOSMAN GAMING | Elite Gaming Community">
+    <meta property="og:description" content="Join the squad and dominate the battlefield in PUBG, Call of Duty, Fortnite and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hosmangaming.com">
+    <meta property="og:image" content="https://hosmangaming.com/og-image.jpg">
     
     <!-- Favicon Links -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -71,7 +83,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            padding: 20px 40px;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -83,7 +95,13 @@
             transform: translateZ(0);
             -webkit-transform: translateZ(0);
             will-change: transform;
-            transition: background 0.3s ease;
+            transition: all 0.4s ease;
+        }
+
+        .header-scrolled {
+            padding: 10px 40px;
+            background: rgba(10, 14, 39, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
 
         .logo-container {
@@ -98,25 +116,78 @@
             letter-spacing: 4px;
             color: white;
             text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .logo span {
             color: var(--accent);
         }
 
-        /* Profile Photo for Mobile */
+        .logo-tagline {
+            font-size: 0.7rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: var(--accent);
+            margin-top: 5px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Profile Photo with Animation */
         .profile-photo {
-            display: none;
             width: 60px;
             height: 60px;
             border-radius: 50%;
             background: var(--accent);
             overflow: hidden;
             border: 3px solid white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            z-index: 10;
         }
 
         .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 25px rgba(0, 234, 255, 0.8);
+        }
+
+        .profile-photo:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Animation Classes for Profile Photo */
+        .profile-photo.hidden {
+            opacity: 0;
+            transform: translateY(-100%) scale(0.8);
+        }
+
+        .profile-photo.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Mobile Profile Photo */
+        .mobile-profile {
+            display: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid white;
+            margin-right: 15px;
+        }
+
+        .mobile-profile img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -134,10 +205,26 @@
             font-weight: 500;
             transition: color 0.3s;
             font-size: 1rem;
+            position: relative;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
         }
 
         nav a:hover {
             color: var(--accent);
+        }
+
+        nav a:hover:after {
+            width: 100%;
         }
 
         /* Hero Section */
@@ -149,12 +236,19 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 100px 20px 20px;
+            padding: 120px 20px 20px;
             background: radial-gradient(ellipse at center, var(--secondary) 0%, var(--primary) 70%);
             overflow: hidden;
             /* Prevent repaints during scroll */
             transform: translateZ(0);
             -webkit-transform: translateZ(0);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -220,6 +314,40 @@
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Floating Particles Background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000%) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         /* Snake Game Section - Simplified */
@@ -296,7 +424,7 @@
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--card-border);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             /* Hardware acceleration */
             transform: translateZ(0);
@@ -306,6 +434,7 @@
 
         .game-card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .game-poster-container {
@@ -424,9 +553,14 @@
             border-radius: 12px;
             text-align: center;
             border: 1px solid var(--card-border);
+            transition: transform 0.3s ease;
             /* Hardware acceleration */
             transform: translateZ(0);
             -webkit-transform: translateZ(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
         }
 
         .feature-icon {
@@ -494,32 +628,102 @@
             margin-top: 20px;
         }
 
+        /* Loading Animation */
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            z-index: 1000;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             header {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 15px;
+                padding: 10px 20px;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            .header-scrolled {
+                padding: 8px 20px;
             }
 
             .logo-container {
-                width: 100%;
-                justify-content: center;
+                width: auto;
+                justify-content: flex-start;
                 position: relative;
             }
 
             .profile-photo {
-                display: block;
-                position: absolute;
-                left: 0;
+                display: none;
             }
 
-            nav ul {
-                gap: 15px;
+            .mobile-profile {
+                display: block;
+            }
+
+            .logo {
+                font-size: 1.5rem;
+                flex-direction: row;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .logo-tagline {
+                display: none;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
             }
 
             .hero {
-                padding-top: 180px;
+                padding-top: 120px;
             }
 
             .cta-buttons {
@@ -532,19 +736,94 @@
                 max-width: 300px;
                 justify-content: center;
             }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-menu li {
+            margin: 20px 0;
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .mobile-menu a:hover {
+            color: var(--accent);
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
+    <!-- Loading Bar -->
+    <div class="loading-bar" id="loadingBar"></div>
+
     <!-- Header -->
-    <header>
+    <header id="mainHeader">
         <div class="logo-container">
-            <div class="profile-photo">
+            <div class="mobile-profile">
                 <!-- Add your photo here -->
                 <img src="your-photo.jpg" alt="Profile Photo">
             </div>
-            <div class="logo">HOSMAN<span>GAMING</span></div>
+            <div class="logo">
+                HOSMAN<span>GAMING</span>
+                <div class="logo-tagline">ELITE GAMING COMMUNITY</div>
+            </div>
         </div>
+        
+        <div class="profile-photo visible" id="profilePhoto">
+            <!-- Add your photo here -->
+            <img src="your-photo.jpg" alt="Profile Photo">
+        </div>
+        
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -554,19 +833,40 @@
                 <li><a href="#join">Join Us</a></li>
             </ul>
         </nav>
+        
+        <button class="mobile-menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#games">Games</a></li>
+            <li><a href="#snake">Snakies</a></li>
+            <li><a href="#community">Community</a></li>
+            <li><a href="#join">Join Us</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <h1>ELITE GAMING COMMUNITY</h1>
-        <h2>JOIN THE SQUAD. DOMINATE THE BATTLEFIELD.</h2>
-        <div class="cta-buttons">
-            <a href="https://chat.whatsapp.com/LwLrLfZDWAp7gClin6QPaD?mode=wwt" class="btn btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> JOIN WHATSAPP
-            </a>
-            <a href="https://t.me/gta_v_files" class="btn btn-telegram">
-                <i class="fab fa-telegram"></i> JOIN TELEGRAM
-            </a>
+        <div class="particles" id="particles"></div>
+        <div class="hero-content">
+            <h1>ELITE GAMING COMMUNITY</h1>
+            <h2>JOIN THE SQUAD. DOMINATE THE BATTLEFIELD.</h2>
+            <div class="cta-buttons">
+                <a href="https://chat.whatsapp.com/LwLrLfZDWAp7gClin6QPaD?mode=wwt" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> JOIN WHATSAPP
+                </a>
+                <a href="https://t.me/gta_v_files" class="btn btn-telegram">
+                    <i class="fab fa-telegram"></i> JOIN TELEGRAM
+                </a>
+            </div>
         </div>
     </section>
 
@@ -576,7 +876,7 @@
         <div class="games-grid">
             <div class="game-card">
                 <div class="game-poster-container">
-                    <img src="pubg.jpeg" alt="PUBG" class="game-poster" loading="lazy">
+                    <img src="pubg.jpeg" alt="PUBG Mobile - Battle Royale Game" class="game-poster" loading="lazy">
                 </div>
                 <div class="game-info">
                     <h3 class="game-title">PUBG Mobile</h3>
@@ -585,7 +885,7 @@
             </div>
             <div class="game-card">
                 <div class="game-poster-container">
-                    <img src="call of duty.jpeg" alt="Call of Duty" class="game-poster" loading="lazy">
+                    <img src="call of duty.jpeg" alt="Call of Duty Mobile - FPS Game" class="game-poster" loading="lazy">
                 </div>
                 <div class="game-info">
                     <h3 class="game-title">Call of Duty: Mobile</h3>
@@ -594,7 +894,7 @@
             </div>
             <div class="game-card">
                 <div class="game-poster-container">
-                    <img src="fortnite.jpg" alt="Fortnite" class="game-poster" loading="lazy">
+                    <img src="fortnite.jpg" alt="Fortnite - Battle Royale Game" class="game-poster" loading="lazy">
                 </div>
                 <div class="game-info">
                     <h3 class="game-title">Fortnite</h3>
@@ -603,7 +903,7 @@
             </div>
             <div class="game-card">
                 <div class="game-poster-container">
-                    <img src="garena.jpeg" alt="Free Fire" class="game-poster" loading="lazy">
+                    <img src="garena.jpeg" alt="Garena Free Fire - Battle Royale Game" class="game-poster" loading="lazy">
                 </div>
                 <div class="game-info">
                     <h3 class="game-title">Garena Free Fire</h3>
@@ -632,11 +932,11 @@
         <h2 class="section-title">GAMEPLAY HIGHLIGHTS</h2>
         <div class="gameplay-container">
             <div class="gameplay-item">
-                <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUycWFmNWdweXI1aTVpaWUzaHFwdmM3eG85N25rcjh2aXNucGt1cTBvMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hvBvoeXL0TAw9gnGfj/giphy.gif" alt="PUBG Gameplay" class="gameplay-gif" loading="lazy">
+                <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUycWFmNWdweXI1aTVpaWUzaHFwdmM3eG85N25rcjh2aXNucGt1cTBvMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hvBvoeXL0TAw9gnGfj/giphy.gif" alt="PUBG Mobile Gameplay" class="gameplay-gif" loading="lazy">
                 <div class="gameplay-overlay">PUBG Mobile Action</div>
             </div>
             <div class="gameplay-item">
-                <img src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyeTY3OTB4YWR0dDlqdnFmOTVsNWZpbzV1aXBsM2E5eG40YTYzMXdldyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ftPEhC2EtUfpP9ygiT/giphy.gif" alt="COD Gameplay" class="gameplay-gif" loading="lazy">
+                <img src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyeTY3OTB4YWR0dDlqdnFmOTVsNWZpbzV1aXBsM2E5eG40YTYzMXdldyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ftPEhC2EtUfpP9ygiT/giphy.gif" alt="Call of Duty Mobile Gameplay" class="gameplay-gif" loading="lazy">
                 <div class="gameplay-overlay">Call of Duty: Mobile</div>
             </div>
             <div class="gameplay-item">
@@ -712,76 +1012,144 @@
         <p class="copyright">© 2023 HOSMAN GAMING. All rights reserved.<br>Not affiliated with Activision, Epic Games, PUBG Corporation, or Garena.</p>
     </footer>
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <script>
-        // Debounced scroll function for better performance
-        let scrollTimeout;
-        window.addEventListener('scroll', function() {
-            if (scrollTimeout) {
-                cancelAnimationFrame(scrollTimeout);
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random size
+                const size = Math.random() * 10 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Random position
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation delay
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Profile photo animation on scroll
+        let lastScrollY = window.scrollY;
+        const profilePhoto = document.getElementById('profilePhoto');
+        const header = document.getElementById('mainHeader');
+        
+        function updateProfilePhotoVisibility() {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                // Scrolling down
+                profilePhoto.classList.remove('visible');
+                profilePhoto.classList.add('hidden');
+            } else {
+                // Scrolling up
+                profilePhoto.classList.remove('hidden');
+                profilePhoto.classList.add('visible');
             }
             
-            scrollTimeout = requestAnimationFrame(function() {
-                const header = document.querySelector('header');
-                if (window.scrollY > 50) {
-                    header.style.background = 'rgba(10, 14, 39, 0.95)';
-                } else {
-                    header.style.background = 'rgba(10, 14, 39, 0.9)';
-                }
-            });
-        });
-
-        // Optimized smooth scrolling with requestAnimationFrame
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId !== '#') {
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        const targetPosition = targetElement.offsetTop - 80;
-                        
-                        const startPosition = window.pageYOffset;
-                        const distance = targetPosition - startPosition;
-                        const duration = 800;
-                        let start = null;
-                        
-                        function step(timestamp) {
-                            if (!start) start = timestamp;
-                            const progress = timestamp - start;
-                            const percentage = Math.min(progress / duration, 1);
-                            
-                            // Easing function for smooth scrolling
-                            const easeInOut = percentage < 0.5 
-                                ? 4 * percentage * percentage * percentage 
-                                : 1 - Math.pow(-2 * percentage + 2, 3) / 2;
-                                
-                            window.scrollTo(0, startPosition + (distance * easeInOut));
-                            
-                            if (progress < duration) {
-                                requestAnimationFrame(step);
-                            }
-                        }
-                        
-                        requestAnimationFrame(step);
-                    }
-                }
-            });
-        });
-
-        // Preload critical resources
-        window.addEventListener('load', function() {
-            // Preload hero section images if needed
-            const criticalImages = [
-                'pubg.jpeg',
-                'call of duty.jpeg',
-                'fortnite.jpg',
-                'garena.jpeg'
-            ];
+            lastScrollY = currentScrollY;
             
-            criticalImages.forEach(src => {
-                const img = new Image();
-                img.src = src;
+            // Header background on scroll
+            if (currentScrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        }
+
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        function toggleBackToTop() {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        }
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
+        });
+
+        // Mobile menu functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+        });
+
+        // Loading bar animation
+        const loadingBar = document.getElementById('loadingBar');
+        
+        function updateLoadingBar() {
+            const winHeight = window.innerHeight;
+            const bodyHeight = document.body.clientHeight;
+            const scrollPosition = window.scrollY;
+            const progress = (scrollPosition / (bodyHeight - winHeight)) * 100;
+            
+            loadingBar.style.width = `${progress}%`;
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            
+            // Event listeners
+            window.addEventListener('scroll', () => {
+                updateProfilePhotoVisibility();
+                toggleBackToTop();
+                updateLoadingBar();
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            // Close mobile menu if open
+                            mobileMenu.classList.remove('active');
+                            
+                            const targetPosition = targetElement.offsetTop - 80;
+                            
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Initialize loading bar and back to top button
+            updateLoadingBar();
+            toggleBackToTop();
         });
     </script>
 </body>
