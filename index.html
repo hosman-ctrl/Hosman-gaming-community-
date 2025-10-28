@@ -35,6 +35,8 @@
             --white: #ffffff;
             --light-bg: #f5f5f7;
             --dark-text: #1d1d1f;
+            --modern-blue: #0f1a2f;
+            --modern-purple: #1a0f2f;
         }
 
         * {
@@ -219,16 +221,16 @@
             width: 100%;
         }
 
-        /* Hero Section - Apple-style */
+        /* Hero Section - Reduced Height */
         .hero {
             position: relative;
-            min-height: 100vh;
+            min-height: 85vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 120px 20px 20px;
+            padding: 120px 20px 60px;
             background: radial-gradient(ellipse at center, var(--secondary) 0%, var(--primary) 70%);
             overflow: hidden;
         }
@@ -241,17 +243,17 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.8rem, 10vw, 5.5rem);
+            font-size: clamp(2.5rem, 10vw, 4.5rem);
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             letter-spacing: -2px;
             color: var(--white);
             line-height: 1;
         }
 
         .hero h2 {
-            font-size: clamp(1.2rem, 4vw, 2rem);
-            margin-bottom: 40px;
+            font-size: clamp(1.1rem, 4vw, 1.7rem);
+            margin-bottom: 30px;
             color: var(--accent);
             font-weight: 500;
             letter-spacing: 0.5px;
@@ -263,7 +265,7 @@
         .cta-buttons {
             display: flex;
             gap: 20px;
-            margin-top: 40px;
+            margin-top: 30px;
             flex-wrap: wrap;
             justify-content: center;
         }
@@ -341,7 +343,7 @@
 
         /* Games Section - Samsung-style grid */
         .games-section {
-            padding: 120px 20px;
+            padding: 100px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -402,6 +404,70 @@
             line-height: 1.5;
         }
 
+        /* Gaming Tips Section */
+        .tips-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--modern-blue) 0%, var(--modern-purple) 100%);
+        }
+
+        .tips-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .tip-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .tip-game {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .tip-game-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .tip-game-name {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tip-content {
+            color: var(--text);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
         /* Snake Game Section */
         .snake-section {
             padding: 100px 20px;
@@ -429,18 +495,18 @@
             font-weight: 500;
         }
 
-        /* Gameplay Section */
+        /* Gameplay Section - Improved */
         .gameplay-section {
-            padding: 120px 20px;
-            background: var(--secondary);
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
         }
 
         .gameplay-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
         }
 
         .gameplay-item {
@@ -449,6 +515,12 @@
             position: relative;
             height: 240px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .gameplay-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .gameplay-gif {
@@ -476,7 +548,7 @@
 
         /* Community Section */
         .community-section {
-            padding: 120px 20px;
+            padding: 100px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -521,27 +593,83 @@
             line-height: 1.5;
         }
 
-        /* Footer */
+        /* Footer - Modernized */
         footer {
             background: var(--primary);
             padding: 70px 20px 40px;
-            text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
         }
 
         .footer-logo {
             font-size: 2rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             letter-spacing: 1px;
+        }
+
+        .footer-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
         }
 
         .social-icons {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 30px 0;
+            gap: 15px;
+            margin: 20px 0;
         }
 
         .social-icon {
@@ -562,10 +690,51 @@
             transform: translateY(-5px);
         }
 
+        .newsletter-form {
+            display: flex;
+            margin-top: 15px;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 8px 0 0 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-btn {
+            padding: 0 20px;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 0 8px 8px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .newsletter-btn:hover {
+            background: #00d9f2;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 50px auto 0;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
         .copyright {
             color: var(--text-secondary);
             font-size: 0.9rem;
-            margin-top: 30px;
             line-height: 1.6;
         }
 
@@ -662,7 +831,7 @@
 
             .hero {
                 padding-top: 100px;
-                min-height: 90vh;
+                min-height: 75vh;
             }
 
             .hero h1 {
@@ -683,12 +852,14 @@
             }
 
             .games-section,
+            .tips-section,
             .gameplay-section,
             .community-section {
                 padding: 80px 20px;
             }
 
             .games-grid,
+            .tips-grid,
             .gameplay-container,
             .community-features {
                 grid-template-columns: 1fr;
@@ -700,16 +871,26 @@
                 padding: 20px;
             }
 
+            .gameplay-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .gameplay-item {
+                height: 180px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
             .back-to-top {
                 bottom: 20px;
                 right: 20px;
                 width: 45px;
                 height: 45px;
                 font-size: 1.1rem;
-            }
-
-            footer {
-                padding: 50px 20px 30px;
             }
         }
 
@@ -793,9 +974,9 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#games">Games</a></li>
+                <li><a href="#tips">Pro Tips</a></li>
                 <li><a href="#snake">Snakies</a></li>
                 <li><a href="#community">Community</a></li>
-                <li><a href="#join">Join Us</a></li>
             </ul>
         </nav>
         
@@ -811,9 +992,9 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#games">Games</a></li>
+            <li><a href="#tips">Pro Tips</a></li>
             <li><a href="#snake">Snakies</a></li>
             <li><a href="#community">Community</a></li>
-            <li><a href="#join">Join Us</a></li>
         </ul>
     </div>
 
@@ -875,6 +1056,68 @@
         </div>
     </section>
 
+    <section class="tips-section" id="tips">
+        <div class="tips-container">
+            <h2 class="section-title" style="color: white;">PRO GAMING TIPS</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-game">
+                        <div class="tip-game-icon">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <div class="tip-game-name">PUBG Mobile</div>
+                    </div>
+                    <p class="tip-content">Always land in high-tier loot areas early game to get better weapons and gear.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-game">
+                        <div class="tip-game-icon">
+                            <i class="fas fa-skull"></i>
+                        </div>
+                        <div class="tip-game-name">Call of Duty</div>
+                    </div>
+                    <p class="tip-content">Use slide and jump movements to make yourself a harder target in close combat.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-game">
+                        <div class="tip-game-icon">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <div class="tip-game-name">Fortnite</div>
+                    </div>
+                    <p class="tip-content">Master the art of quick building for defense and gaining high ground advantage.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-game">
+                        <div class="tip-game-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="tip-game-name">Free Fire</div>
+                    </div>
+                    <p class="tip-content">Use characters with complementary abilities to create powerful team synergies.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-game">
+                        <div class="tip-game-icon">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div class="tip-game-name">PUBG Mobile</div>
+                    </div>
+                    <p class="tip-content">Learn the vehicle spawn locations for quick rotations across the map.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-game">
+                        <div class="tip-game-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="tip-game-name">All Games</div>
+                    </div>
+                    <p class="tip-content">Communication with your squad is key - use pings and voice chat effectively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="snake-section" id="snake">
         <div class="snake-container">
             <h2 class="snake-title">TRY SNAKIES!</h2>
@@ -889,7 +1132,7 @@
     </section>
 
     <section class="gameplay-section">
-        <h2 class="section-title">GAMEPLAY HIGHLIGHTS</h2>
+        <h2 class="section-title" style="color: white;">GAMEPLAY HIGHLIGHTS</h2>
         <div class="gameplay-container">
             <div class="gameplay-item">
                 <img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUycWFmNWdweXI1aTVpaWUzaHFwdmM3eG85N25rcjh2aXNucGt1cTBvMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/hvBvoeXL0TAw9gnGfj/giphy.gif" alt="A PUBG character in a ghillie suit aiming a sniper rifle." class="gameplay-gif" loading="lazy">
@@ -902,6 +1145,19 @@
             <div class="gameplay-item">
                 <img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUybmo2aWRmNzBuODh4Z3RzdTI0dTdzcXNhbmJwNjh6d2Q4cWQ7c2hxbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1gUmpL04z5sl82ltdh/giphy.gif" alt="A Fortnite character building a structure quickly during a battle." class="gameplay-gif" loading="lazy">
                 <div class="gameplay-overlay">Fortnite Battle Royale</div>
+            </div>
+            <!-- 🎮 ADD MORE GIFS HERE - Replace the placeholder URLs with actual GIF URLs -->
+            <div class="gameplay-item">
+                <img src="🎮 ADD-GIF-URL-HERE" alt="Free Fire gameplay highlight" class="gameplay-gif" loading="lazy">
+                <div class="gameplay-overlay">Free Fire Action</div>
+            </div>
+            <div class="gameplay-item">
+                <img src="🎮 ADD-GIF-URL-HERE" alt="PUBG Mobile squad gameplay" class="gameplay-gif" loading="lazy">
+                <div class="gameplay-overlay">Squad Gameplay</div>
+            </div>
+            <div class="gameplay-item">
+                <img src="🎮 ADD-GIF-URL-HERE" alt="Call of Duty sniper montage" class="gameplay-gif" loading="lazy">
+                <div class="gameplay-overlay">Sniper Montage</div>
             </div>
         </div>
     </section>
@@ -940,34 +1196,66 @@
         </div>
     </section>
 
-    <footer id="join">
-        <div class="footer-logo">HOSMAN GAMING</div>
-        <div class="social-icons">
-            <a href="https://youtube.com/@hosmancountry?si=gBq86Yh4XNnAr-SQ" class="social-icon">
-                <i class="fab fa-youtube"></i>
-            </a>
-            <a href="#" class="social-icon">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-                <i class="fab fa-discord"></i>
-            </a>
-            <a href="#" class="social-icon">
-                <i class="fab fa-tiktok"></i>
-            </a>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <div class="footer-logo">HOSMAN GAMING</div>
+                <p class="footer-description">Join the elite gaming community and dominate the battlefield with thousands of active players. Compete in tournaments, learn from pros, and connect with fellow gamers.</p>
+                <div class="social-icons">
+                    <a href="https://youtube.com/@hosmancountry?si=gBq86Yh4XNnAr-SQ" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#games">Our Games</a></li>
+                    <li><a href="#tips">Pro Tips</a></li>
+                    <li><a href="#snake">Snakies Game</a></li>
+                    <li><a href="#community">Community</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-heading">Join Our Community</h3>
+                <div class="cta-buttons">
+                    <a href="https://chat.whatsapp.com/LwLrLfZDWAp7gClin6QPaD?mode=wwt" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WHATSAPP GROUP
+                    </a>
+                    <a href="https://t.me/gta_v_files" class="btn btn-telegram">
+                        <i class="fab fa-telegram"></i> TELEGRAM CHANNEL 
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3 class="footer-heading">Newsletter</h3>
+                <p class="footer-description">Subscribe to get updates on tournaments, new content, and community events.</p>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                    <button type="submit" class="newsletter-btn">Join</button>
+                </form>
+            </div>
         </div>
-        <div class="cta-buttons">
-            <a href="https://chat.whatsapp.com/LwLrLfZDWAp7gClin6QPaD?mode=wwt" class="btn btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> WHATSAPP GROUP
-            </a>
-            <a href="https://t.me/gta_v_files" class="btn btn-telegram">
-                <i class="fab fa-telegram"></i> TELEGRAM CHANNEL 
-            </a>
+        
+        <div class="footer-bottom">
+            <p class="copyright">© 2023 HOSMAN GAMING. All rights reserved.<br>Not affiliated with Activision, Epic Games, PUBG Corporation, or Garena.</p>
         </div>
-        <p class="copyright">© 2023 HOSMAN GAMING. All rights reserved.<br>Not affiliated with Activision, Epic Games, PUBG Corporation, or Garena.</p>
     </footer>
 
     <div class="back-to-top" id="backToTop">
