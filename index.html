@@ -5,27 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOSMAN GAMING | Elite Gaming Community - PUBG, COD, Fortnite & More</title>
     
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Join HOSMAN GAMING elite gaming community. Play PUBG, Call of Duty, Fortnite, Free Fire with active players, tournaments & strategy guides.">
     <meta name="keywords" content="gaming community, PUBG Mobile, Call of Duty Mobile, Fortnite, Free Fire, mobile gaming, tournaments, gaming squad">
     <meta name="author" content="HOSMAN GAMING">
     
-    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="HOSMAN GAMING | Elite Gaming Community">
     <meta property="og:description" content="Join the squad and dominate the battlefield in PUBG, Call of Duty, Fortnite and more.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://hosmangaming.com">
     <meta property="og:image" content="https://hosmangaming.com/og-image.jpg">
     
-    <!-- Favicon Links -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Luckiest+Guy&family=Bangers&family=Chewy&family=Pacifico&family=Lobster&family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -50,9 +45,12 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: var(--primary);
-            color: var(--text);
+            /* [CHANGE 2]: Applied Apple's system font stack. */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            /* [CHANGE 3]: Applied Samsung-style light grey background. */
+            background: #f5f5f7;
+            /* [CHANGE 4]: Changed default text color to be readable on the new light background. */
+            color: #1d1d1f;
             overflow-x: hidden;
             line-height: 1.6;
             /* Hardware acceleration */
@@ -60,7 +58,8 @@
             -webkit-transform: translateZ(0);
         }
 
-        /* Coca-Cola Style Font for Headings */
+        /* [CHANGE 5]: Removed the 'Bubblegum Sans' font family from this entire block. */
+        /* It will now inherit the new system font from the <body>. */
         h1, h2, h3, h4, h5, h6,
         .logo,
         .section-title,
@@ -71,8 +70,7 @@
         .snake-subtitle,
         .gameplay-overlay,
         .footer-logo {
-            font-family: 'Bubblegum Sans', cursive;
-            font-weight: 400;
+            font-weight: 400; /* Keeping this for style */
             letter-spacing: 1px;
             text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
         }
@@ -132,7 +130,7 @@
             letter-spacing: 2px;
             color: var(--accent);
             margin-top: 5px;
-            font-family: 'Inter', sans-serif;
+            /* [CHANGE 6]: Removed explicit 'Inter' font. */
         }
 
         /* Profile Photo with Animation */
@@ -388,7 +386,8 @@
             margin-bottom: 70px;
             font-weight: 900;
             letter-spacing: 4px;
-            color: white;
+            /* [CHANGE 7]: Changed color to be visible on light background. */
+            color: #1d1d1f;
             text-transform: uppercase;
             position: relative;
             padding-bottom: 20px;
@@ -408,7 +407,8 @@
         .community-title {
             font-size: clamp(2.5rem, 8vw, 4rem);
             letter-spacing: 3px;
-            color: white;
+            /* [CHANGE 8]: Changed color to be visible on light background. */
+            color: #1d1d1f;
             text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
         }
 
@@ -735,7 +735,7 @@
                 width: 100%;
                 max-width: 300px;
                 justify-content: center;
-            }
+.            }
 
             .back-to-top {
                 bottom: 20px;
@@ -803,15 +803,12 @@
     </style>
 </head>
 <body>
-    <!-- Loading Bar -->
     <div class="loading-bar" id="loadingBar"></div>
 
-    <!-- Header -->
     <header id="mainHeader">
         <div class="logo-container">
             <div class="mobile-profile">
-                <!-- Add your photo here -->
-                <img src="your-photo.jpg" alt="Profile Photo">
+                <img src="📸 YOUR-FILENAME-HERE.jpg" alt="Profile Photo">
             </div>
             <div class="logo">
                 HOSMAN<span>GAMING</span>
@@ -820,8 +817,7 @@
         </div>
         
         <div class="profile-photo visible" id="profilePhoto">
-            <!-- Add your photo here -->
-            <img src="your-photo.jpg" alt="Profile Photo">
+            <img src="📸 YOUR-FILENAME-HERE.jpg" alt="Profile Photo">
         </div>
         
         <nav>
@@ -839,7 +835,6 @@
         </button>
     </header>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="close-menu" id="closeMenu">
             <i class="fas fa-times"></i>
@@ -853,7 +848,6 @@
         </ul>
     </div>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="particles" id="particles"></div>
         <div class="hero-content">
@@ -870,7 +864,6 @@
         </div>
     </section>
 
-    <!-- Games Section -->
     <section class="games-section" id="games">
         <h2 class="section-title">OUR GAMES</h2>
         <div class="games-grid">
@@ -913,7 +906,6 @@
         </div>
     </section>
 
-    <!-- Simple Snake Game Section -->
     <section class="snake-section" id="snake">
         <div class="snake-container">
             <h2 class="snake-title">TRY SNAKIES!</h2>
@@ -927,7 +919,6 @@
         </div>
     </section>
 
-    <!-- Gameplay Section -->
     <section class="gameplay-section">
         <h2 class="section-title">GAMEPLAY HIGHLIGHTS</h2>
         <div class="gameplay-container">
@@ -946,7 +937,6 @@
         </div>
     </section>
 
-    <!-- Community Section -->
     <section class="community-section" id="community">
         <h2 class="section-title community-title">WHY JOIN OUR COMMUNITY?</h2>
         <div class="community-features">
@@ -981,7 +971,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="join">
         <div class="footer-logo">HOSMAN GAMING</div>
         <div class="social-icons">
@@ -1012,7 +1001,6 @@
         <p class="copyright">© 2023 HOSMAN GAMING. All rights reserved.<br>Not affiliated with Activision, Epic Games, PUBG Corporation, or Garena.</p>
     </footer>
 
-    <!-- Back to Top Button -->
     <div class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </div>
@@ -1136,6 +1124,7 @@
                             // Close mobile menu if open
                             mobileMenu.classList.remove('active');
                             
+                            // [SUGGESTION]: See debug report for improving this offset
                             const targetPosition = targetElement.offsetTop - 80;
                             
                             window.scrollTo({
